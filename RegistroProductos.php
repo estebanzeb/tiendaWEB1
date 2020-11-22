@@ -1,6 +1,6 @@
 <?php
 
-    include("Basedatos2.php");
+    include("Basedatos.php");
 
     if (isset($_POST["botonEnvio"])){   
  
@@ -8,17 +8,21 @@
         $nombre=$_POST["nombre"];
         $marca=$_POST["marca"];
         $precio=$_POST["precio"];
-        $genero=$_POST["genero"];
+        $descripcion=$_POST["descripcion"];
+        $foto=$_POST["foto"];
 
         //2. crear una copia de la clase BD
         //crear un objeto de la clase bd
-        $transaccion=new Basedatos2();
+        $transaccion=new Basedatos();
 
         //3. crear una consulta SQL para agregar datos
-        $consultaSQL= "INSERT INTO producto(nombre, marca, precio, descripcion) VALUES ('$nombre', '$marca', '$precio', '$descripcion')";
+        $consultaSQL= "INSERT INTO productos(nombre, marca, precio, descripcion, foto) VALUES ('$nombre', '$marca', '$precio', '$descripcion', '$foto')";
 
         //4. Utilizar el metodo agregarDatos()
         $transaccion->agregarDatos($consultaSQL);
+
+        //5. Redireccion a la vista que necesita 
+        header("location:listadoProductos.php");
                
     }
 

@@ -1,6 +1,7 @@
 <?php
 
-class Basedatos2{
+class Basedatos
+{
 
     //VARIABLES O ATRIBUTOS
     public $usuarioBD="root";
@@ -44,7 +45,7 @@ class Basedatos2{
         if($resultado){
             echo("Exito insertando los datos");
         }else{
-            echo("error insertando los datos");
+            echo("Error insertando los datos");
 
         }
 
@@ -68,18 +69,51 @@ class Basedatos2{
         return($consultaBuscarDatos->fetchAll());
 
 
+    }
 
+    public function eliminarDatos($consultaSQL){
+        
+        //1.Se debe establecer una conexion a BD
+        $conexionBD=$this->conectarBD();
 
-
+        //2.Preparar la consulta para insertar datos
+        $consultaEliminarDatos=$conexionBD->prepare($consultaSQL);
+   
+        //3.Ejecutar la consulta
+        $resultado=$consultaEliminarDatos->execute();
+ 
+        //4.Validar la operacion
+         if($resultado){
+             echo("Exito eliminando los datos");
+         }else{
+             echo("Error eliminando los datos");
+ 
+         }
     }
 
 
+    public function editarDatos($consultaSQL){
 
+        //1.Se debe establecer una conexion a BD
+        $conexionBD=$this->conectarBD();
+
+        //2.Preparar la consulta para insertar datos
+        $consultaEditarDatos=$conexionBD->prepare($consultaSQL);
+
+        //3.Ejecutar la consulta
+        $resultado=$consultaEditarDatos->execute();
+
+        //4.Validar la operacion
+        if($resultado){
+            echo("Exito editando los datos");
+        }else{
+            echo("Error editando los datos");
+
+        }
+
+    }
 
 }
-
-
-
 
 
 ?>

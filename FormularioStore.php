@@ -13,18 +13,18 @@
     </header>
     <main>
         <div class="container">
-            <form action="RegistroProducto.php" method="POST">
-                <h1>REGISTRO DE USUARIOS</h1>
+            <form action="RegistroProductos.php" method="POST">
+                <h1>REGISTRO DE PRODUCTOS</h1>
                 
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+                        <input type="text" class="form-control" placeholder="Nombre Completo" name="nombre" required>
                     </div>
                     <div class="col">
                         <input type="text" class="form-control" placeholder="Marca" name="marca" required>
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Precio" name="precio" required>
+                        <input type="number" class="form-control" placeholder="Precio($)" maxlength="3" name="precio" required>
                     </div>
                 </div>
                 
@@ -37,6 +37,13 @@
                 </div>
 
                 <div class="row mt-3">
+                    <div class="col">
+                        <label class="font-weight-bold">Foto:</label>
+                        <input type="text" class="form-control" placeholder="URL fotografia" name="foto" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
                 <button type="submit" class="btn btn-info btn-block" name="botonEnvio">Registrar</button>
                 </div>
 
@@ -45,21 +52,17 @@
 
         <?php 
         
-            include("Basedatos2.php");
+            include("Basedatos.php");
             
             //1. crear una copia de la clase BD
             //crear un objeto de la clase bd
-            $transaccion=new Basedatos2();
+            $transaccion=new Basedatos();
 
             //2.Crear la consulta para buscar datos
             $consultaSQL="SELECT * FROM `producto` WHERE 1";
 
             //3.Utilizar el metodo consultarDatos
-            $usuarios=$transaccion->consultarDatos($consultaSQL);
-
-            print_r($usuarios);
-        
-        
+            $usuarios=$transaccion->consultarDatos($consultaSQL); 
         
         ?>
     
