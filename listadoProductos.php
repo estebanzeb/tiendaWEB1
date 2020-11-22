@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de productos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
-    
+<header>
+<h1>JUEGOS ACTUALES</h1>
+        <div class="col col-20 text-right">
+        <h1><a href="FormularioStore.php" class="btn btn-primary btn-lg ">REGISTRAR NUEVO JUEGO</a></h1>
+        </div>
+        <hr>
+    </header>
 
 <?php 
         
@@ -33,13 +39,14 @@
 
                 <div class="col mb-4">
 
-                    <div class="card h-100">
+                    <div class="card h-100 border-info ">
 
                         <img src="<?php echo($producto["foto"]) ?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo($producto)["nombre"] ?></h5>
-                            <p class="card-text"> <?php echo($producto)["marca"] ?> </p>
-                            <p class="card-text"> <?php echo($producto)["precio"] ?> </p>
+                        <h4 class="card-header card-title"><?php echo($producto)["nombre"] ?></h4>
+                        <div class="card-body text-info" >
+                            <h5 class="card-text"> <?php echo($producto)["marca"] ?> </h5>
+                            <hr>
+                            <p class="card-text">Precio <?php echo($producto)["precio"] ?>$ </p>
                             <p class="card-text"> <?php echo($producto)["descripcion"] ?> </p>
                             <a href="eliminarProductos.php?id=<?php echo($producto["idproducto"])?>" class="btn btn-danger">Eliminar</a>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editar<?php echo($producto["idproducto"]) ?>">

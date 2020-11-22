@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STORE</title>
+    <title>TIENDA</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <h1>REGISTRO</h1>
+        <h1>TIENDA DE VIDEO JUEGOS</h1>
+        <div class="col col-20 text-right">
+        <h1><a href="listadoProductos.php" class="btn btn-primary btn-lg ">VISUALIZAR JUEGOS ACTUALES</a></h1>
+        </div>
         <hr>
     </header>
     <main>
