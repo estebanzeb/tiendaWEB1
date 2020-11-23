@@ -6,9 +6,9 @@
     <title>Lista de productos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
-<body>
+<body background="https://2.bp.blogspot.com/-QWV-YIUdXgU/V7CSvI1DNmI/AAAAAAAFymQ/ea9APEjx32MlFilCtxCbEAEwYtRKaNG5gCLcB/s1600/EFECTOS%2B%2528536%2529.gif">
 <header>
-<h1>JUEGOS ACTUALES</h1>
+<h1 class="font-italic text-info">JUEGOS ACTUALES</h1>
         <div class="col col-20 text-right">
         <h1><a href="FormularioStore.php" class="btn btn-primary btn-lg ">REGISTRAR NUEVO JUEGO</a></h1>
         </div>
@@ -29,7 +29,7 @@
         //3.Utilizar el metodo consultarDatos
         $productos=$transaccion->consultarDatos($consultaSQL);   
     
-    ?>
+?>
 
     <div class="container">
     
@@ -48,19 +48,19 @@
                             <hr>
                             <p class="card-text">Precio <?php echo($producto)["precio"] ?>$ </p>
                             <p class="card-text"> <?php echo($producto)["descripcion"] ?> </p>
+                            <a href="https://www.riotgames.com/en" target="_blank">Descargar <?php echo($producto)["nombre"] ?></a>
+                            <hr>
                             <a href="eliminarProductos.php?id=<?php echo($producto["idproducto"])?>" class="btn btn-danger">Eliminar</a>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editar<?php echo($producto["idproducto"]) ?>">
-                            Editar
+                            Editar</button>
                         </div>
-                        </div>
-
                     </div>
 
                     <div class="modal fade" id="editar<?php echo($producto["idproducto"]) ?>" tabindex="-1"  aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <h5 class="modal-title text-danger" id="exampleModalLabel" >Edicion del producto: <?php echo($producto)["nombre"] ?></h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -68,22 +68,20 @@
                                 <div class="modal-body">
                                     <form action="editarProductos.php?id=<?php echo($producto["idproducto"]) ?>" method="POST">
                                         <div class="form-group">
-                                            <label>Precio:</label>
+                                            <label class="text-primary">Precio:</label>
                                             <input type="number" class="form-control" name="precioEditar" value="<?php echo($producto)["precio"] ?>">
                                         </div>
                                         <div class="form-group">
-                                                <label>Descripcion:</label>
+                                                <label class="text-primary">Descripcion:</label>
                                                 <textarea class="form-control"rows="3" name="descripcionEditar"><?php echo($producto)["descripcion"] ?> </textarea>
                                         </div>
                                         <button type="submit" class="btn btn-info" name="botonEditar">Editar</button>
                                     </form>
                                 </div>
-
+                            </div>
                         </div>
-
                     </div>
-
-                </div>
+                </div>    
             <?php endforeach?> 
 
         </div>

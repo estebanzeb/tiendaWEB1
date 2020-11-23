@@ -6,9 +6,9 @@
     <title>TIENDA</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
-<body>
+<body background="https://pa1.narvii.com/6687/5944a520e39597c747c4dbf5bdd17ec7499077f4_hq.gif">
     <header>
-        <h1>TIENDA DE VIDEO JUEGOS</h1>
+        <h1 class="font-italic text-info">TIENDA DE VIDEO JUEGOS</h1>
         <div class="col col-20 text-right">
         <h1><a href="listadoProductos.php" class="btn btn-primary btn-lg ">VISUALIZAR JUEGOS ACTUALES</a></h1>
         </div>
@@ -17,7 +17,7 @@
     <main>
         <div class="container">
             <form action="RegistroProductos.php" method="POST">
-                <h1>REGISTRO DE PRODUCTOS</h1>
+                <h1 class="text-info">REGISTRO DE PRODUCTOS</h1>
                 
                 <div class="row">
                     <div class="col">
@@ -34,14 +34,14 @@
                 <div class="row mt-3">
                     
                     <div class="col">
-                        <label class="font-weight-bold">Descripción:</label>
+                        <label class="font-weight-bold text-info">Descripción:</label>
                         <textarea class="form-control" rows="4" name="descripcion" required></textarea>
                     </div>
                 </div>
 
                 <div class="row mt-3">
                     <div class="col">
-                        <label class="font-weight-bold">Foto:</label>
+                        <label class="font-weight-bold text-info">Foto:</label>
                         <input type="text" class="form-control" placeholder="URL fotografia" name="foto" required>
                     </div>
                 </div>
